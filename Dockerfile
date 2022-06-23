@@ -15,6 +15,8 @@ RUN apt-get -q update \
     && mv server.jar vanilla.jar \
     && mv fabric-server-launch.jar server.jar \
     && echo "serverJar=vanilla.jar" > fabric-server-launcher.properties \
-    && chmod 777 ./start.sh \
-    && ./start.sh
+    && chmod 777 ./start.sh 
+    
+CMD [./start.sh]
+
 EXPOSE 25565
