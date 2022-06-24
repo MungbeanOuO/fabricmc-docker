@@ -1,7 +1,8 @@
 FROM ubuntu:latest
 COPY ./minecraft /fabric
 WORKDIR /
-RUN apt-get -q update \
+RUN apt-get -q update && apt-get -yq upgrade && apt-get clean && apt-get autoremove \
+    && apt-get -q update \
     && apt-get -yq install gnupg curl && apt-key adv \
         --keyserver hkp://keyserver.ubuntu.com:80 \
         --recv-keys 0xB1998361219BD9C9 \
