@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:20.04
 COPY ./minecraft /fabric
 WORKDIR /
 RUN apt-get -q update && apt-get -yq upgrade && apt-get clean && apt-get autoremove \
@@ -16,4 +16,4 @@ RUN chmod 777 ./fabric-installer-0.11.0.jar \
     && chmod 777 ./fabric-server-launch.jar \
     && chmod 777 ./start.sh 
     
-CMD ["/fabric/start.sh", "run"]
+CMD ["/fabric/start.sh"]
